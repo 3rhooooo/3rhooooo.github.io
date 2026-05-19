@@ -21,5 +21,22 @@ Mais revenons-en à notre sable. Il est composé de milliers et milliers de grai
 Cette méthode s'axe autour d'une gestion propre de l'intégration des forces lors du moment de contact. La formulation utilisée est celle en impulsion, comme on peut le voir la formulation de la dynamique en Contact Dynamics avec M la matrice de masse généralisée, donc comprenant l'inertie aussi; f_e les forces externes généralisées; f_q les forces en rotation généralisées; p l'impulsion généralisée; et dv la mesure différentielle des vitesses. Comme je l'ai dit on utilise la méthode Contact Dynamics, qu'on peut écrire mathématiquement comme ceci.
 
 [7]
-Les conditions plus simples à comprendre sont la 2ème, g >= 0 avec g le gap entre grains. On interdit donc les grains de s'interpénétrés,  rn la réaction normale >= 0 de telle sorte que des grains en contacts ne peuvent que se repousser.
+Les conditions plus simples à comprendre sont la 2ème, g >= 0 avec g le gap entre grains. On interdit donc les grains de s'interpénétrés,  rn la réaction normale >= 0 de telle sorte que des grains en contacts ne peuvent que se repousser; Signorini qu'on peut voir sur le graphe avec la courbe bleue et qui nous indique juste que si un gap est non-nul entre des particules alors on ne peut pas avoir de réaction normale de contact entre elles (on se trouve alors sur la partie horizontale du graphe), et que si 2 grains sont en contact (leur gap vaut 0) alors une réaction normale positive existe entre ces grains (la partie verticale du graphe). Les 2 dernières lignes nous donnent notre problème de frottement en translation par la loi de Coulomb.
 
+La partie la plus importante se situe surement en première ligne, celle de Dynamique du contact et nous permet de trouver nos vitesses après résolution du contact basé sur nos vitesses avant le contact. Ainsi sur un pas de temps donné dt, nous définissons 2 états: un qui vit juste avant la résolution du contact (dénoté par un -), et un qui vit juste après résolution du contact (dénoté par un +). u- est souvent appelé vitesse libre aussi. Pour lier ces 2 états, nous avons besoin des réactions r, mais aussi de ce qu'on appelle l'opérateur Delassus. Ainsi lorsque l'on résout les contacts, on se place dans les bases des contacts et nous devons donc projeter nos réactions dans ces bases, c'est là le principe de l'opérateur Delassus. Il nous permet de passer d'une base globale à une base locale du contact pour la résolution.
+
+[8]
+Si on garde ce problème ci lors de nos simulations, on se rencontre d'une chose intéressante. Là où s'attendrait à avoir une pile tout ce qu'il y a de plsu classiques, on remarque que [lire le slide].
+
+On peut donc se poser la question: les sphères sont-elles adaptées pour du sable ? Les grains de sables ressemblent-ils à des sphères ?
+
+[9]
+La réponse est non. Ici on peut voir une photo d'un album de la bbc pris début des années 2010 qui montrait du sable de façon zoomée, et beaucoup de formes différentes existent. Nous supposons donc qu'il y a des effets géométriques qui permettent d'abord de stabiliser le tas pour éviter qu'il ne s'affaisse jusqu'à devenir plat, et que ces effets contribuent à avoir un angle de repos, synonyme de résistance au cisaillement. Nous avons alors utilisé des constructions de bodies, des polygones pour cela.
+
+[10]
+Les polygones classiques ont 2 problèmes pour nous: le premier est la détection de contacts, ainsi si on dit comme fait avant que les segments prescrivent des zone entières de l'espace, il est ambigu de dire ce qu'il se passera pour une particule si elle arrive dans cette zone mais pas depuis le segment. Cela a vite été résolu en signant les segments. un autre problème vient des intersections de coins: si 2 coins sharp veulent s'interpénétrer, alors lors de notre calcul de normale pour calculer une correction, il nous est impossible de définir une normale propre et unique. Chose qui est résolue par l'utilisation de coin arrondis.
+
+[11]
+C'est joli, ça marche avec n'importe quel nombre de vertex
+
+[12]
