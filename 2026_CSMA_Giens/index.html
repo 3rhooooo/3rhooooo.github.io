@@ -46,7 +46,7 @@
   <!--                                                                                                                                             \______/                          -->
   <style>
     .slides {
-      /* border: groove; */
+      border: groove;
       font-size: 40px;
       font-family: 'Helvetica Neue', Helvetica, sans-serif;
     }
@@ -229,23 +229,20 @@
                                                                         "88*"  .x8*~     -->
 
         <section class="migflow" >
-          <div class="cover" style="font-size: 55px;">
+          <div class="cover" style="font-size: 55px; text-align: right;">
             Étude numérique du frottement macroscopique de matériaux granulaires par l'essai de pile conique
           </div>
-          <div class="container" style="width: 99%; height: 600px; top: 50px">
-            <video data-src="figures/demo.mp4" autoplay muted loop="loop" style="transform: scale(1);"></video>
+          <div class="container" style="height: 120px; width: 55%; font-size: 70%; top: 100px;">
+            <div class="container centered" style="width: 90%;">
+              <b>Alexandre Pirot</b>, M. Henry, S. Yans, J. Lambrechts, V. Legat
+            </div>
           </div>
           <div class="columns-container" style="width: 99%; height: 120px;">
-            <div class="container" style="height: 120px; width: 20%;">
-              <img data-src="figures/UCLouvain_logo.svg.png" style="transform: translateY(-15%);">
+            <div class="container" style="height: 120px; width: 20%; top: 200px;">
+              <img data-src="figures/UCLouvain_logo.svg.png" style="transform: translateY(-15%); scale: 2;">
             </div>
-            <div class="container" style="height: 120px; width: 55%; font-size: 70%;">
-              <div class="container centered" style="width: 90%;">
-                <b>Alexandre Pirot</b>, M. Henry, S. Yans, J. Lambrechts, V. Legat
-              </div>
-            </div>
-            <div class="container" style="height: 120px; width: 20%;">
-              <img data-src="figures/migflow_logo.png" style="transform: translateY(-15%);">
+            <div class="container" style="height: 120px; width: 20%; top: 200px;">
+              <img data-src="figures/migflow_logo.png" style="transform: translateY(-15%); scale: 2;">
             </div>
           </div>
         </section>
@@ -365,8 +362,7 @@
           </div>
           <div class="container" style="font-size: 85%; height: 150px">
             \[
-            m_i\frac{\text{d}\mathbf{u}_i}{\text{d}t} = \sum_{i\neq j}^{N-1} \mathbf{r}_{ij} + m_i\mathbf{g},\text{ avec
-            } \mathbf{r}_{ij} = r_n\vec{\mathbf{n}} + r_t\vec{\mathbf{t}}
+            \mathbf{M}\mathrm{d}\mathbf{v} = (\mathbf{f}_e + \mathbf{f}_q)\mathrm{d}t + \mathrm{d}\mathbf{p}
             \]
           </div>
           <div class="container">
