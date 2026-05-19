@@ -172,6 +172,7 @@
       top: 875px;
       right: 20px;
       height: 20px;
+      text-align: right;
     }
 
     .greyed_out {
@@ -533,55 +534,19 @@
 
         <section class="migflow">
           <div class="header">
-            De simples disques
-          </div>
-            <div class="subheader">
-            Les origines du frottement de roulement
-          </div>
-          <div class="columns-container" style="width: 99%; height: 750px;">
-            <div class="container" style="width: 45%; height: 740px; border-color: red;">
-              <img data-src="figures/contact_patch_pneu.webp">
-            </div>
-            <div class="container" style="width: 45%; height: 740px; border-color: red;">
-              <img  data-src="figures/hysterese_frottement_roulement.jpg">
-            </div>
-          </div>
-          <div class="bottom-right-reference">
-            Behroozinia et al., “An investigation towards intelligent tyres using finite element analysis,”<br>
-            Hyttinen et al., "Truck tyre transient rolling resistance and temperature at varying vehicle velocities - Measurements and simulations,
-            Polymer Testing"
-          </div>
-        </section>
-
-        <section class="migflow">
-          <div class="header">
             Le problème du roulement
           </div>
           <div class="subheader">
             Tantôt sans glissement...
           </div>
           <div class="body-container">
-            <div class="container r-stack" style="height: 350px; width: 99%;">
-              <div class="container centered fragment fade-out">
+            <div class="container" style="height: 350px; width: 99%;">
+              <div class="container centered">
                 <video data-src="figures/roulement/sans_glissement_no_rolling.mp4" autoplay loop="loop" muted></video>
               </div>
-              <div class="container centered">
-                <video data-src="figures/roulement/sans_glissement.mp4" autoplay loop="loop" muted></video>
-              </div>
             </div>
-            <div class="columns-container" style="height: 350px; width: 99%;">
-              <div class="container" style="width: 45%; height: 340px;">
-                <div class="r-stack">
-                  <img data-src="figures/roulement/omega_sans_glissement_no_rolling.png">
-                  <img class="fragment fade-in" data-src="figures/roulement/omega_sans_glissement.png">
-                </div>
-              </div>
-              <div class="container" style="width: 45%; height: 340px;">
-                <div class="r-stack">
-                  <img data-src="figures/roulement/velocity_sans_glissement_no_rolling.png">
-                  <img class="fragment fade-in" data-src="figures/roulement/velocity_sans_glissement.png">
-                </div>
-              </div>
+            <div class="container" style="height: 350px; width: 99%;">
+              <img data-src="figures/roulement/sans_glissement_no_rolling.png" style="scale: 1.4;">
             </div>
           </div>
         </section>
@@ -594,34 +559,86 @@
             ... tantôt avec glissement
           </div>
           <div class="body-container">
-            <div class="columns-container" style="height: 350px; width: 99%;">
-              <div class="container" style="width: 45%; height: 340px;">
-                <div class="r-stack">
-                  <img data-src="figures/roulement/omega_avec_glissement_no_rolling.png">
-                  <img class="fragment fade-in" data-src="figures/roulement/omega_avec_glissement.png">
-                </div>
-              </div>
-              <div class="container" style="width: 45%; height: 340px;">
-                <div class="r-stack">
-                  <img data-src="figures/roulement/velocity_avec_glissement_no_rolling.png">
-                  <img class="fragment fade-in" data-src="figures/roulement/velocity_avec_glissement.png">
-                </div>
-              </div>
+            <div class="container" style="height: 400px;">
+              <img data-src="figures/roulement/sans_glissement_no_rolling.png" style="scale: 1.2;">
             </div>
-            <div class="container r-stack" style="height: 350px; width: 99%;">
+            <div class="container" style="height: 300px;">
               <div class="container centered">
                 <video data-src="figures/roulement/avec_glissement_no_rolling.mp4" autoplay loop="loop" muted></video>
               </div>
-              <div class="container centered">
-                <video class="fragment fade-in" data-src="figures/roulement/avec_glissement.mp4" autoplay loop="loop" muted></video>
-              </div>
             </div>
           </div>
-        </section>        
+        </section>
+
+        <section class="migflow">
+          <div class="header">
+            Le problème du roulement 
+          </div>
+          <div class="subheader">
+            Tantôt sans glissement...
+          </div>
+          <div class="body-container">
+            <div class="container" style="height: 350px; width: 99%;">
+              <div class="container centered">
+                <video data-src="figures/roulement/sans_glissement.mp4" autoplay loop="loop" muted></video>
+              </div>
+            </div>
+            <div class="container" style="height: 350px; width: 99%;">
+              <img data-src="figures/roulement/sans_glissement.png" style="scale: 1.4;">
+            </div>
+          </div>
+          <div class="bottom-right">
+            Plus réaliste
+          </div>
+        </section>
         
         <section class="migflow">
           <div class="header">
-            De simples disques
+            Le problème du roulement
+          </div>
+          <div class="subheader">
+            ... tantôt avec glissement
+          </div>
+          <div class="body-container">
+            <div class="container" style="height: 400px;">
+              <img data-src="figures/roulement/sans_glissement.png" style="scale: 1.2;">
+            </div>
+            <div class="container" style="height: 300px;">
+              <div class="container centered">
+                <video data-src="figures/roulement/avec_glissement.mp4" autoplay loop="loop" muted></video>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-right">
+            Plus réaliste
+          </div>
+        </section>
+
+        <section class="migflow">
+          <div class="header">
+            Pourquoi un pneu ralenti
+          </div>
+            <div class="subheader">
+            Les origines du frottement de roulement
+          </div>
+          <div class="columns-container" style="width: 99%; height: 750px;">
+            <div class="container" style="width: 45%; height: 740px; border-color: red;">
+              <img data-src="figures/contact_patch_pneu.webp">
+            </div>
+            <div class="container" style="width: 45%; height: 740px; border-color: red;">
+              <img  data-src="figures/hysterese_frottement_roulement.jpg">
+            </div>
+          </div>
+          <div class="bottom-right-reference" style="transform: translateY(-50px);">
+            Behroozinia et al., “An investigation towards intelligent tyres using finite element analysis,”<br>
+            Hyttinen et al., "Truck tyre transient rolling resistance and temperature at varying vehicle velocities - Measurements and simulations,
+            Polymer Testing"
+          </div>
+        </section>
+        
+        <section class="migflow">
+          <div class="header">
+            Un deuxième frottement
           </div>
           <div class="subheader">
             Un frottement supplémentaire est nécessaire: le frottement de roulement
@@ -629,7 +646,7 @@
           <div class="body-container">
             <div class="columns-container" style="height: 500px;">
               <div class="container_shadow text" style="width: 70%; height: fit-content; font-size: 85%; left: 50px;">
-                Ce type de frottement peut être modélisé de manière analogue à Coulomb, mais sur une impulsion angulaire. Son introduction permet de capturer les bons angles de repos.
+                Ce type de frottement peut être modélisé de manière analogue à Coulomb, mais sur une impulsion angulaire
               </div>
             </div>
             <div class="container" style="height: 100px;"></div>
@@ -637,7 +654,6 @@
           </div>
         </section>
         
-
         <section class="migflow">
           <div class="header">
             Si on revient à nos disques
@@ -647,53 +663,29 @@
           </div>
           <div class="body-container">
             <div class="columns-container" style="width: 99%; height: 740px;">
-              <div class="container text" style="width: 55%; height: 730px;">
-                S'intègre facilement dans la loi de Newton
-                \[
-                m_i\frac{\text{d}\mathbf{u}_i}{\text{d}t} = \sum_{i\neq j}^{N-1} \mathbf{r}_{ij} + \color{red}{\sum_{i\neq j}^{N-1} \mathbf{r}_{ij}^\mathrm{c}} +  m_i\mathbf{g}
-                \] mais aussi dans le problème de contact
-                <span style="font-size: 80%;">
-                \[
-                \begin{align}
-                  &\delta \mathbf{u}^+ = \delta \mathbf{u}^- + \mathbf{W}\mathbf{r}  \\
+              <div class="container" style="width: 55%; height: 730px;">
+                <div class="container centered">
+                  \[
+                  \begin{align}
+                  & \mathbf{u}^+ =  \mathbf{u}^- + \mathbf{W}\mathbf{r}  \\
                   &g \geq 0 \\
                   &\mathrm{r}_n \geq 0 \\
                   &\color{red}{\mathrm{r}_c =f(g)} \\
                   &(\mathrm{r}_n + \color{red}{\mathrm{r}_c})g = 0 \\
-                  &g = 0,\, \delta \mathrm{u}_n^- \leq 0   \implies \delta \mathrm{u}_n^+ = 0 \\
+                  &g = 0,\,  \mathrm{u}_n^- \leq 0   \implies  \mathrm{u}_n^+ = 0 \\
                   &\color{red}{g > g_c \implies \mathrm{r}_c = 0} \\
                   &\lVert \mathbf{r}_t\rVert \leq \mu \mathrm{r}_n \\
-                  &\lVert \delta \mathbf{u}_t^+ \rVert \neq 0 \implies \mathbf{r}_t = -\mu\mathrm{r}_n\frac{\delta \mathbf{u}_t^+}{\lVert \delta \mathbf{u}_t^+ \rVert}
-                \end{align}
-                \]</span>
-              </div>
-              <div class="container" style="width: 35%; height: inherit;">
-                <div class="container centered">
-                  <video data-src="figures/cohesion.mp4" autoplay loop="loop" muted style="transform: scale(1.8);"></video>
+                  &\lVert  \mathbf{u}_t^+ \rVert \neq 0 \implies \mathbf{r}_t = -\mu\mathrm{r}_n\frac{ \mathbf{u}_t^+}{\lVert \delta \mathbf{u}_t^+ \rVert}
+                  \end{align}
+                  \]
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="migflow">
-          <div class="header">
-            Pour conclure
-          </div>
-          <div class="subheader">
-            Pistes de développements futurs
-          </div>
-          <div class="body-container">
-            <div class="container centered">
-              <div class="bullet-list">
-                <li>Intégration dans le solver implicite du frottement de roulement</li>
-                <li></li>
-                <li></li>
+              <div class="container" style="width: 35%; height: inherit;">
+                <img data-src="figures/signorini_cohesion.png" style="scale: 1.5; transform: translateX(-50px);">
               </div>
             </div>
           </div>
         </section>
-
 
         <!--
           ..      .             ....             .....
