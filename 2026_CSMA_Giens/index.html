@@ -605,11 +605,11 @@
           </div>
           <div class="body-container">
             <div class="container r-stack" style="height: 350px; width: 99%;">
-              <div class="container centered">
-                <video class="fragment fade-out" data-src="figures/roulement/sans_glissement_no_rolling.mp4" autoplay loop="loop" muted></video>
+              <div class="container centered fragment fade-out">
+                <video data-src="figures/roulement/sans_glissement_no_rolling.mp4" autoplay loop="loop" muted></video>
               </div>
               <div class="container centered">
-                <video class="fragment fade-in" data-src="figures/roulement/sans_glissement.mp4" autoplay loop="loop" muted></video>
+                <video data-src="figures/roulement/sans_glissement.mp4" autoplay loop="loop" muted></video>
               </div>
             </div>
             <div class="columns-container" style="height: 350px; width: 99%;">
@@ -689,7 +689,33 @@
             Après s'être intéressé au sec, le cas mouillé: la cohésion
           </div>
           <div class="body-container">
-            
+            <div class="columns-container" style="width: 99%; height: 740px;">
+              <div class="container text" style="width: 55%; height: 730px;">
+                S'intègre facilement dans la loi de Newton
+                \[
+                m_i\frac{\text{d}\mathbf{u}_i}{\text{d}t} = \sum_{i\neq j}^{N-1} \mathbf{r}_{ij} + \color{red}{\sum_{i\neq j}^{N-1} \mathbf{r}_{ij}^\mathrm{c}} +  m_i\mathbf{g}
+                \] mais aussi dans le problème de contact
+                <span style="font-size: 80%;">
+                \[
+                \begin{align}
+                  &\delta \mathbf{u}^+ = \delta \mathbf{u}^- + \mathbf{W}\mathbf{r}  \\
+                  &g \geq 0 \\
+                  &\mathrm{r}_n \geq 0 \\
+                  &\color{red}{\mathrm{r}_c =f(g)} \\
+                  &(\mathrm{r}_n + \color{red}{\mathrm{r}_c})g = 0 \\
+                  &g = 0,\, \delta \mathrm{u}_n^- \leq 0   \implies \delta \mathrm{u}_n^+ = 0 \\
+                  &\color{red}{g > g_c \implies \mathrm{r}_c = 0} \\
+                  &\lVert \mathbf{r}_t\rVert \leq \mu \mathrm{r}_n \\
+                  &\lVert \delta \mathbf{u}_t^+ \rVert \neq 0 \implies \mathbf{r}_t = -\mu\mathrm{r}_n\frac{\delta \mathbf{u}_t^+}{\lVert \delta \mathbf{u}_t^+ \rVert}
+                \end{align}
+                \]</span>
+              </div>
+              <div class="container" style="width: 35%; height: inherit;">
+                <div class="container centered">
+                  <video data-src="figures/cohesion.mp4" autoplay loop="loop" muted style="transform: scale(1.8);"></video>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -698,10 +724,16 @@
             Pour conclure
           </div>
           <div class="subheader">
-            Et aller plus loin
+            Pistes de développements futurs
           </div>
-          <div class="container" style="height : 750px; width: 99%;">
-            <span class="centered" style="font-size: 300%;">Conclusions</span>
+          <div class="body-container">
+            <div class="container centered">
+              <div class="bullet-list">
+                <li>Intégration dans le solver implicite du frottement de roulement</li>
+                <li></li>
+                <li></li>
+              </div>
+            </div>
           </div>
         </section>
 
