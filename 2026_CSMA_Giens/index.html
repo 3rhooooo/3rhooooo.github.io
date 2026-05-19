@@ -228,23 +228,23 @@
                                                                         88888    :88f
                                                                         "88*"  .x8*~     -->
 
-        <section class="migflow" style="">
+        <section class="migflow" >
           <div class="cover" style="font-size: 55px;">
             Étude numérique du frottement macroscopique de matériaux granulaires par l'essai de pile conique
           </div>
-          <div class="container" style="width: 99%; height: 600px; border-color: orange; top: 50px">
+          <div class="container" style="width: 99%; height: 600px; top: 50px">
             <video data-src="figures/demo.mp4" autoplay muted loop="loop" style="transform: scale(1);"></video>
           </div>
           <div class="columns-container" style="width: 99%; height: 120px;">
-            <div class="container" style="border-color: green; height: 120px; width: 20%;">
+            <div class="container" style="height: 120px; width: 20%;">
               <img data-src="figures/UCLouvain_logo.svg.png" style="transform: translateY(-15%);">
             </div>
-            <div class="container" style="border-color: blue; height: 120px; width: 55%; font-size: 70%;">
+            <div class="container" style="height: 120px; width: 55%; font-size: 70%;">
               <div class="container centered" style="width: 90%;">
                 <b>Alexandre Pirot</b>, M. Henry, S. Yans, J. Lambrechts, V. Legat
               </div>
             </div>
-            <div class="container" style="border-color: red; height: 120px; width: 20%;">
+            <div class="container" style="height: 120px; width: 20%;">
               <img data-src="figures/migflow_logo.png" style="transform: translateY(-15%);">
             </div>
           </div>
@@ -258,27 +258,18 @@
             Mouiller un milieu granulaire lui donne une meilleure tenue mécanique
           </div>
           <div class="columns-container" style="width: 99%; height: 400px;">
-            <div class="container" style="border-color: rgb(21, 255, 0); height: 300px; width: 40%; bottom: 20px; right: 15px">
+            <div class="container" style="height: 300px; width: 40%; bottom: 20px; right: 15px">
               <img data-src="figures/chateau_sable.jpg">
             </div>
-            <div class="container" style="border-color: #8c00ff; height: 300px; width: 40%; top: 20px; left: 5px;">
+            <div class="container" style="height: 300px; width: 40%; top: 20px; left: 5px;">
               <img data-src="figures/chateau_sable_demoli.webp">
             </div>
           </div>
-          <div class="container" style="border-color: rgb(255, 191, 94); height: 300px; width: 40%; top: 20px; left: 5px">
+          <div class="container" style="height: 300px; width: 40%; top: 20px; left: 5px">
             <img data-src="figures/zandsculpturenfestival_middelkerke.webp">
           </div>
-        </section>
-
-        <section class="migflow">
-          <div class="header">
-            Une expérience numérique simple
-          </div>
-          <div class="subheader">
-            Un seau de sable qui se lève
-          </div>
-          <div class="container" style="top: 20px;">
-            <video data-src="figures/demo.mp4" autoplay loop="loop" muted style="scale: 1.05;">
+          <div class="bottom-right-reference">
+            shutterstock.com, vrt.be
           </div>
         </section>
 
@@ -292,7 +283,7 @@
           </div>
           <div class="columns-container" style="height: 750px;">
             <div class="container" style="width:45%; top: 20px;">
-              <video data-src="figures/mill_grains.m4v" muted autoplay="autoplay" loop="loop"></video>
+              <video data-src="figures/mill_grains.mp4" muted autoplay="autoplay" loop="loop"></video>
             </div>
             <div class="container text" style="width: 50%; top: 15px;">
               <ul class="none-list" style="font-weight: bold; font-size: 100%;">
@@ -340,7 +331,7 @@
                   \frac{\partial \phi}{\partial t} + \nabla\cdot\mathbf{u} = 0 \\
                   \rho\left( \frac{\partial \mathbf{u}}{\partial t} + \nabla\cdot\left( \frac{\mathbf{u}\mathbf{u}}{\phi} \right) \right) = \nabla\cdot\left( -p\mathbf{I} + \phi\mathbf{\tau} \right) + \mathbf{f} + \phi\rho\mathbf{g}
                   \]</span>
-                <li><b>Équation de la phase solide (2<sup style="text-decoration: underline;">ème</sup>) loi de Newton</b></li>
+                <li><b>Équation de la phase solide (2<sup style="text-decoration: underline;">ème</sup> loi de Newton</b>)</li>
                 <span style="font-size: 90%;">\[
                   \frac{\partial}{\partial t}\left( m_i\mathbf{v}_i \right) = m_i\mathbf{g} - \left. V_i\nabla p\right\vert_{\mathbf{x}_i} - \mathbf{f}_{d,i}
                   \]</span>
@@ -350,6 +341,18 @@
                   \]</span>
               </ul>
             </div>
+          </div>
+        </section>
+
+        <section class="migflow">
+          <div class="header">
+            Une expérience numérique simple
+          </div>
+          <div class="subheader">
+            Un seau de sable qui se lève
+          </div>
+          <div class="container" style="top: 20px;">
+            <video data-src="figures/demo.mp4" autoplay loop="loop" muted style="scale: 1.05;">
           </div>
         </section>
 
@@ -418,7 +421,7 @@
               <div class="container" style="width: 45%; height: 300px; bottom: 100px; font-size: 65%;">
                 \[
                 \begin{align}
-                &m_i\frac{\text{d}\mathbf{u}_i}{\text{d}t} = \sum_{i\neq j}^{N-1} \mathbf{r}_{ij} + m_i\mathbf{g} &\text{2$^\underline{\text{ème}}$ loi de Newton} \\
+                &m_i\frac{\text{d}\mathbf{u}_i}{\text{d}t} = \sum_{i\neq j}^{N-1} \mathbf{r}_{ij} + m_i\mathbf{g} &(\text{2$^\underline{\text{ème}}$ loi de Newton}) \\
                 &\delta \mathbf{u}^+ = \delta \mathbf{u}^- + \mathbf{W}\mathbf{r} &\text{(Dynamique du contact)} \\
                 &g \geq 0  &\text{(Impénétrabilité)} \\
                 &\mathrm{r}_n \geq 0 &\text{(Non-attraction)}\\
@@ -453,10 +456,10 @@
               <video data-src="figures/juste_coulomb_pointe.mp4" loop autoplay muted style="transform: scale(1.8);"></video>
             </div>
             <div class="container text" style="left: 140px; bottom: 400px; width: 70%; height: 400px;bottom: 200px;">
-              <div class="centered">
+              <div class="centered container_shadow" style="height: 120px;">
                 On trouve des angles de repos transitoires trop faibles, même avec des coefficients de friction qui ne sont pas réalistes (> 1). Le frottement de Coulomb n'est pas le seul qui entre en jeu.
-                <div class="container_shadow" style="top: 50px;">
-                  Du sable n'est pas sphérique.
+                <div class="container_shadow" style="top: 100px;">
+                  On manque les effets géométriques du sable.
                 </div>
               </div>
             </div>
@@ -473,10 +476,13 @@
           <div class="subheader">
             Remplacer des grains par des polygones pour se rapprocher de la réalité
           </div>
-          <div class="container" style="border-color: green ;width: 99%; height: 740px;">
+          <div class="container" style="width: 99%; height: 740px;">
             <div class="container" style="top: 95px;">
               <img data-src="figures/sable_closeup_bbc.webp" style="transform: scale(1.3);">
             </div>
+          </div>
+          <div class="bottom-right-reference">
+            bbc.co.uk
           </div>
         </section>
 
@@ -537,11 +543,8 @@
               La solution: des polygones à sommets arrondis
             </div>
             <div class="container" style="width: 99%; height: 750px;">
-              <div class="container centered" style="top: 508px">
-                <video data-src="figures/diff_polygons.mp4" style="transform: scale(6.5);"></video>
-              </div>
-              <div class="container centered" style="top: 508px">
-                <video data-src="figures/diff_polygons_tres_ronds.mp4" style="transform: scale(6.5);"></video>
+              <div class="container centered">
+                <video data-src="figures/differents_polygones.mp4" style="transform: scale(1.3);" autoplay loop="loop" muted></video>
               </div>
             </div>
           </section>
@@ -557,13 +560,15 @@
           <div class="columns-container" style="width: 99%; height: 650px;">
             <div class="container" style="width: 49%; height: 700px;">
               <div class="container centered">
-                <img data-src="figures/contacts_normalised.png">
+                <img data-src="figures/contacts_normalised.png" style="transform: scale(1);">
               </div>
             </div>
             <div class="container" style="width: 49%; height: 700px; left: 180px;">
               <div class="container centered">
-                <img data-src="figures/hull.png" style="transform:scale(1.6);"
-                >
+                <div class="container" style="right: 150px;">
+                  <img data-src="figures/hull.png" style="transform:scale(1.2);"
+                </div>
+
               </div>
             </div>
           </div>
@@ -584,6 +589,11 @@
               <img  data-src="figures/hysterese_frottement_roulement.jpg">
             </div>
           </div>
+          <div class="bottom-right-reference">
+            Behroozinia et al., “An investigation towards intelligent tyres using finite element analysis,”<br>
+            Hyttinen et al., "Truck tyre transient rolling resistance and temperature at varying vehicle velocities - Measurements and simulations,
+            Polymer Testing"
+          </div>
         </section>
 
         <section class="migflow">
@@ -594,11 +604,31 @@
             Tantôt sans glissement...
           </div>
           <div class="body-container">
-            <img data-src="figures/roulement/"
-
+            <div class="container r-stack" style="height: 350px; width: 99%;">
+              <div class="container centered">
+                <video class="fragment fade-out" data-src="figures/roulement/sans_glissement_no_rolling.mp4" autoplay loop="loop" muted></video>
+              </div>
+              <div class="container centered">
+                <video class="fragment fade-in" data-src="figures/roulement/sans_glissement.mp4" autoplay loop="loop" muted></video>
+              </div>
+            </div>
+            <div class="columns-container" style="height: 350px; width: 99%;">
+              <div class="container" style="width: 45%; height: 340px;">
+                <div class="r-stack">
+                  <img data-src="figures/roulement/omega_sans_glissement_no_rolling.png">
+                  <img class="fragment fade-in" data-src="figures/roulement/omega_sans_glissement.png">
+                </div>
+              </div>
+              <div class="container" style="width: 45%; height: 340px;">
+                <div class="r-stack">
+                  <img data-src="figures/roulement/velocity_sans_glissement_no_rolling.png">
+                  <img class="fragment fade-in" data-src="figures/roulement/velocity_sans_glissement.png">
+                </div>
+              </div>
+            </div>
           </div>
         </section>
-
+        
         <section class="migflow">
           <div class="header">
             Le problème du roulement
@@ -607,47 +637,59 @@
             ... tantôt avec glissement
           </div>
           <div class="body-container">
-
+            <div class="columns-container" style="height: 350px; width: 99%;">
+              <div class="container" style="width: 45%; height: 340px;">
+                <div class="r-stack">
+                  <img data-src="figures/roulement/omega_avec_glissement_no_rolling.png">
+                  <img class="fragment fade-in" data-src="figures/roulement/omega_avec_glissement.png">
+                </div>
+              </div>
+              <div class="container" style="width: 45%; height: 340px;">
+                <div class="r-stack">
+                  <img data-src="figures/roulement/velocity_avec_glissement_no_rolling.png">
+                  <img class="fragment fade-in" data-src="figures/roulement/velocity_avec_glissement.png">
+                </div>
+              </div>
+            </div>
+            <div class="container r-stack" style="height: 350px; width: 99%;">
+              <div class="container centered">
+                <video data-src="figures/roulement/avec_glissement_no_rolling.mp4" autoplay loop="loop" muted></video>
+              </div>
+              <div class="container centered">
+                <video class="fragment fade-in" data-src="figures/roulement/avec_glissement.mp4" autoplay loop="loop" muted></video>
+              </div>
+            </div>
           </div>
         </section>        
         
         <section class="migflow">
-         <div class="header">
-           De simples disques
-         </div>
-         <div class="subheader">
-           Un frottement supplémentaire est nécessaire: le frottement de roulement
-         </div>
-         <div class="body-container">
-           <div class="columns-container" style="height: 500px;">
-             <div class="container text" style="width: 95%; height: 400px; border-color: green; font-size: 85%;">
-               <ul class="none-list">
-                 <li>
-                   On modélise ce frottement de roulement de manière analogue à Coulomb
-                   \[
-                     C_{r,\,\max} =\min\left( \frac{I_\mathrm{eq} \delta \omega^+}{\mathrm{d}t},\,\mu_r r_n R_\mathrm{eq} \right)
-                   \]
-                 </li>
-                 <li>Introduit un paramètre supplémentaire $\mu_r$ à varier</li>
-                 <li>Permet d'avoir de meilleurs angles ~ 25°</li>
-                 <li>On capture le frottement macroscopique de nos échantillons granulaires</li>
-               </ul>
-             </div>
-             <div class="container" style="width: 70%; height: 100px; font-size: 80%;">
-               <span class="centered" style=" width: 99%;">On voudrait s'affranchir de cette forme de disque pour ressembler plus à sable</span>
-             </div>
-           </div>
-           <div class="container" style="height: 100px;"></div>
-           <video data-src="figures/rolling_friction.mp4" muted autoplay loop="loop" style="transform: scale(1.2);"></video>
-         </div>
-       </section>
+          <div class="header">
+            De simples disques
+          </div>
+          <div class="subheader">
+            Un frottement supplémentaire est nécessaire: le frottement de roulement
+          </div>
+          <div class="body-container">
+            <div class="columns-container" style="height: 500px;">
+              <div class="container_shadow text" style="width: 70%; height: fit-content; font-size: 85%; left: 50px;">
+                Ce type de frottement peut être modélisé de manière analogue à Coulomb, mais sur une impulsion angulaire. Son introduction permet de capturer les bons angles de repos.
+              </div>
+            </div>
+            <div class="container" style="height: 100px;"></div>
+            <video data-src="figures/rolling_friction.mp4" muted autoplay loop="loop" style="transform: scale(1.2);"></video>
+          </div>
+        </section>
+        
 
-       <section class="migflow">
-         <div class="header">
-           Si on revient à nos disques
+        <section class="migflow">
+          <div class="header">
+            Si on revient à nos disques
           </div>
           <div class="subheader">
             Après s'être intéressé au sec, le cas mouillé: la cohésion
+          </div>
+          <div class="body-container">
+            
           </div>
         </section>
 
