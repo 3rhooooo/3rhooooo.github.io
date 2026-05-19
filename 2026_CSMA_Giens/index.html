@@ -368,14 +368,14 @@
           <div class="container">
             <div class="columns-container">
               <div class="container" style="width: 45%; height: 600px;">
-                <div class="container_shadow" style="top: 30px; text-align: center; background-color: #c4dff4; width: 85%;">
+                <div class="container_shadow" style="top: 30px; text-align: center; background-color: #c4dff4; width: 90%;">
                   <div class="container_shadow" style="width: 95%; height: fit-content; font-size: 85%; font-weight: 600; text-align: center; box-shadow: none; border-width: 2px;  background-color: #5db2fb;">
                     <css style="color: white;">
                       Non-Smooth Contact Dynamics
                     </css>
                   </div>
                   <ul class="none-list">
-                    <li><span style="color: #2196f3; padding-right: 5px;">&#9656;</span>Régularisation du saut de force</li>
+                    <li><span style="color: #2196f3; padding-right: 5px;">&#9656;</span>Gestion discrète du saut de force</li>
                     <li><span style="color: #2196f3; padding-right: 5px;">&#9656;</span>Résolution basée sur l'impulsion</li>
                     <li><span style="color: #2196f3; padding-right: 5px;">&#9656;</span>Résolution itérative du contact</li>
                   </ul>
@@ -385,7 +385,7 @@
                 </div>
               </div>
               <div class="container" style="width: 45%; height: 600px;">
-                <div class="container_shadow" style="top: 30px; text-align: center; background-color: #8fb8a1; width: 85%;">
+                <div class="container_shadow" style="top: 30px; text-align: center; background-color: #8fb8a1; width: 90%;">
                   <div class="container_shadow" style="width: 95%; height: fit-content; font-size: 85%; font-weight: 600; text-align: center; box-shadow: none; border-width: 2px;  background-color: #0e8f5d;">
                     <css style="color: white;">
                       Smooth Contact Dynamics
@@ -394,7 +394,7 @@
                   <ul class="none-list">
                     <li><span style="color: #0f9763; padding-right: 5px;">&#9656;</span>Intégration continue des forces</li>
                     <li><span style="color: #0f9763; padding-right: 5px;">&#9656;</span>Résolution basée sur la pénalisation</li>
-                    <li><span style="color: #0f9763; padding-right: 5px;">&#9656;</span>Résolution continue du contact</li>
+                    <li><span style="color: #0f9763; padding-right: 5px;">&#9656;</span>Résolution explicite du contact</li>
                   </ul>
                 </div>
                 <div class="container" style="top: 50px;">
@@ -417,14 +417,13 @@
               <div class="container" style="width: 45%; height: 300px; bottom: 100px; font-size: 65%;">
                 \[
                 \begin{align}
-                &m_i\frac{\text{d}\mathbf{u}_i}{\text{d}t} = \sum_{i\neq j}^{N-1} \mathbf{r}_{ij} + m_i\mathbf{g} &(\text{2$^\underline{\text{ème}}$ loi de Newton}) \\
-                &\delta \mathbf{u}^+ = \delta \mathbf{u}^- + \mathbf{W}\mathbf{r} &\text{(Dynamique du contact)} \\
+                & \mathbf{u}^+ =  \mathbf{u}^- + \mathbf{W}\mathbf{r} &\text{(Dynamique du contact)} \\
                 &g \geq 0  &\text{(Impénétrabilité)} \\
                 &\mathrm{r}_n \geq 0 &\text{(Non-attraction)}\\
-                &\mathrm{r}_ng = 0 &\text{(Condition de Signorin)}\\
-                &g = 0,\, \delta \mathrm{u}_n^- \leq 0   \implies \delta \mathrm{u}_n^+ = 0 &\text{(Non-restitution)}\\
+                &\mathrm{r}_ng = 0 &\text{(Condition de Signorini)}\\
+                &g = 0,\,  \mathrm{u}_n^- \leq 0   \implies  \mathrm{u}_n^+ = 0 &\text{(Non-restitution)}\\
                 &\lVert \mathbf{r}_t\rVert \leq \mu \mathrm{r}_n  &\text{(Cône de Coulomb)}\\
-                &\lVert \delta \mathbf{u}_t^+ \rVert \neq 0 \implies \mathbf{r}_t = -\mu\mathrm{r}_n\frac{\delta \mathbf{u}_t^+}{\lVert \delta \mathbf{u}_t^+ \rVert} &\text{(Glissement)}
+                &\lVert  \mathbf{u}_t^+ \rVert \neq 0 \implies \mathbf{r}_t = -\mu\mathrm{r}_n\frac{ \mathbf{u}_t^+}{\lVert  \mathbf{u}_t^+ \rVert} &\text{(Glissement)}
                 \end{align}
                 \]
               </div>

@@ -1,3 +1,25 @@
 [Cover]
 
-Bonjour tout le monde, aujourd'hui je vais vous parler d'une étude qui se porte sur une propriété d'un matériau granulaire, en l'occurence ici du sable. Ce qui a été choisi d'étudier est l'angle de repos lors d'un essai en pile conique. Cela a été réalisé avec un partenaire industriel dans le cadre d'un projet de collaboration et donc je ne peux pas en dire trop là dessus. Reste quand même que 
+Bonjour tout le monde, aujourd'hui je vais vous parler d'une étude qui se porte sur une propriété d'un matériau granulaire, en l'occurence ici du sable. Ce qui a été choisi d'étudier est l'angle de repos lors d'un essai en pile conique. Cela a été réalisé avec un partenaire industriel dans le cadre d'un projet de collaboration et donc je ne peux pas en dire trop là dessus. Reste quand même que cette première phase de partenariat peut se retrouver dans une situation simple que je vais vous présenter après. Les axes de cette présentation ci suivront donc ce qui a été fait et ce qui sera fait par la suite.
+
+[2]
+La situation simple qui permet d'illustrer les résultats est le chateau de sable. Imaginez vous donc après une journée de conférence chargée, vous voulez aller vous détendre sur la plage et vous décidez de construire un beau chateau de sable. Aillant fini vous voulez prendre une photo mais le chateau s'écroule, une balle tombe dessus, et vous avez devant vous une pile de sable. Vous décidez d'aller un peu plus loin, rebelotte, vous construisez votre chateau de sable, mais le sable vous parait différent, vous avez du mal à faire tenir votre chateau. D'ailleurs, il s'écroule en une pile de nouveau, mais beaucoup plus plate. La 3ème fois sera la bonne, mais cette fois au lieu de prendre du sable sec, vous le mouillez un peu. Miracle, le chateau tient, vous pouvez faire votre photo et votre journée se finit sur une bonne note. Et bien c'est cela dont nous allons parler maintenant: pourquoi lorsque le chateau s'effondre (ou pas), vous obtenez des piles plus ou moins étalées, et pourquoi ce sable ci plutôt que celui-là fait un chateau plus solide que l'autre. Cela on va l'étudier sous 3 aspects: l'aspect physique plus matériel, quels sont les paramêtres qui donne ce tas; l'aspect géométrique puisqu'on verra plus loin que du sable est tout sauf sphérique, c'est un amalgame de beaucoup de formes diverses et variées; et un aspect mouillage, pourquoi de l'eau fait que mon chateau va tenir et être plus solide, ou pas.
+
+Tout cela de manière numérique, et nous allons pour cela utiliser le solver que nous développons dans l'équipe qui est MigFlow
+
+[3]
+MigFlow est un solver qui couple le monde solide des grains et le monde liquide des fluides. Pour les grains ...[lire les points du slide]
+
+[4]
+
+Cela est fait grace à [lire le slide]. Même si MigFlow gère très bien les fluides, cette présentation restera axée solide, et surtout contact. On verra à la fin le début d'un développement d'ersatz pour les interactions grains-fluides qui j'ai juste commencé il a développer très récemment et qui est au stade primaire pour le moment. 
+
+[5]
+Mais revenons-en à notre sable. Il est composé de milliers et milliers de grains qui entrent en contact. Pour résoudre ces contacts, la méthode Contact Dynamics a été choisie
+
+[6]
+Cette méthode s'axe autour d'une gestion propre de l'intégration des forces lors du moment de contact. La formulation utilisée est celle en impulsion, comme on peut le voir la formulation de la dynamique en Contact Dynamics avec M la matrice de masse généralisée, donc comprenant l'inertie aussi; f_e les forces externes généralisées; f_q les forces en rotation généralisées; p l'impulsion généralisée; et dv la mesure différentielle des vitesses. Comme je l'ai dit on utilise la méthode Contact Dynamics, qu'on peut écrire mathématiquement comme ceci.
+
+[7]
+Les conditions plus simples à comprendre sont la 2ème, g >= 0 avec g le gap entre grains. On interdit donc les grains de s'interpénétrés,  rn la réaction normale >= 0 de telle sorte que des grains en contacts ne peuvent que se repousser.
+
