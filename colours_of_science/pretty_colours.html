@@ -29,6 +29,9 @@ h1{font-size:22px;font-weight:500;margin-bottom:0.3rem}
 .row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .mono{font-size:10px;font-family:'SF Mono',Consolas,monospace;color:#555;background:#f0f0ea;border-radius:3px;padding:2px 6px}
 .cat{font-size:10px;color:#999;font-style:italic}
+.copy-btn{font-size:10px;padding:2px 7px;border-radius:3px;border:0.5px solid #bbb;cursor:pointer;color:#555;background:#fff;font-family:inherit;margin-left:auto;transition:background 0.15s}
+.copy-btn:hover{background:#f0f0ea}
+.copy-btn.copied{color:#2a7a2a;border-color:#2a7a2a;background:#f0faf0}
 @media(max-width:500px){body{padding:1rem}.grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
@@ -41,9 +44,9 @@ h1{font-size:22px;font-weight:500;margin-bottom:0.3rem}
 </div>
 <div class="sort-row">
   <span class="sort-label">Sort by</span>
-  <button class="sort-btn active" id="s-default" onclick="setSort('default')">Default</button>
+  <button class="sort-btn" id="s-default" onclick="setSort('default')">Default</button>
   <button class="sort-btn" id="s-name" onclick="setSort('name')">Name A–Z</button>
-  <button class="sort-btn" id="s-hue" onclick="setSort('hue')">Hue</button>
+  <button class="sort-btn active" id="s-hue" onclick="setSort('hue')">Hue</button>
   <button class="sort-btn" id="s-lightness" onclick="setSort('lightness')">Lightness</button>
   <button class="sort-btn" id="s-saturation" onclick="setSort('saturation')">Saturation</button>
   <button class="sort-btn" id="s-category" onclick="setSort('category')">Category</button>
@@ -147,8 +150,16 @@ function render(){
     const swatchStyle=isNull
       ?'background:repeating-linear-gradient(45deg,#ccc,#ccc 2px,#eee 2px,#eee 8px)'
       :'background:'+rgba;
-    return`<div class="card"><div class="swatch" style="${swatchStyle}"></div><div class="info"><p class="name">${name}</p><p class="sub">${sub}</p><div class="row"><span class="mono">${rgba}</span><span class="cat">${cat}</span></div></div></div>`;
+    return`<div class="card"><div class="swatch" style="${swatchStyle}"></div><div class="info"><p class="name">${name}</p><p class="sub">${sub}</p><div class="row"><span class="mono">${rgba}</span><span class="cat">${cat}</span><button class="copy-btn" onclick="copyRgba(this,'${rgba}')" title="Copy RGBA">copy</button></div></div></div>`;
   }).join('');
+}
+
+function copyRgba(btn,rgba){
+  navigator.clipboard.writeText(rgba).then(()=>{
+    btn.textContent='copied';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='copy';btn.classList.remove('copied');},1500);
+  });
 }
 
 buildTags();
